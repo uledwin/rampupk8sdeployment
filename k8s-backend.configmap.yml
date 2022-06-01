@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: backend-configuration
+  labels:
+    component: database-config-map
+    environment: development
+data:
+  DB_HOST: "mysql-database-service"
+  DB_USER: "root"
+  PORT: "3000"
+
+  

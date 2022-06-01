@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-job
+  labels:
+    app: backend-job
+    component: seeds-db
+spec:
+  template:
+    metadata:
+      name: backend-job
+      labels:
+        app: backend-job
+    spec:
+      containers:
+      - name: backend-job
+        image: burnedduke36/ckad-backend-job
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: backend-configuration
+              key: DB_HOST
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: backend-configuration
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_ROOT_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_DATABASE
+      restartPolicy: OnFailure

@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  ramp-up-database
+  labels:
+    app:  ramp-up-database
+    component: databases
+    environment: development
+spec:
+  selector:
+    matchLabels:
+      app: ramp-up-database
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ramp-up-database
+        component: databases
+        environment: development
+    spec:
+      containers:
+      - name:  ramp-up-database
+        image:  mysql:5.7.38
+        #resources:
+        #  requests:
+        #    cpu: 1000m
+        #    memory: 500Mi
+        #  limits:
+        #    cpu: 1500m
+        #    memory: 800Mi
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 20
+          timeoutSeconds: 3
+          failureThreshold: 3
+          periodSeconds: 5
+        readinessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 2
+          periodSeconds: 4
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_ROOT_PASSWORD
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_DATABASE
+        ports:
+        - containerPort:  3306
+          name:  database

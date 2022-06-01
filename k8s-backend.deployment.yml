@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  backend
+  labels:
+    app:  backend
+    component: backend
+    environment: development 
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  backend
+        component: backend
+        environment: development 
+    spec:
+      containers:
+      - name:  backend
+        image:  burnedduke36/ckad-back
+        # livenessProbe:
+        #   httpGet:
+        #     path: /health-check
+        #     port: 8090
+        # readinessProbe:
+        #   httpGet:
+        #     path: /ready-check
+        #     port: 8090
+        #   initialDelaySeconds: 10
+        env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: backend-configuration
+              key: PORT
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: backend-configuration
+              key: DB_HOST
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: backend-configuration
+              key: DB_USER
+        - name: DB_PASS
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_ROOT_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: ramp-up-database-configmap
+              key: MYSQL_DATABASE
+        ports:
+        - containerPort: 3000
+          name:  backend
+      restartPolicy: Always

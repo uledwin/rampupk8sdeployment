@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-database-service
+  labels:
+    app: ramp-up-database
+    component: databases
+    environment: development 
+spec:
+  selector:
+    app: ramp-up-database
+  type: NodePort
+  ports:
+  - name: mysql-database-service
+    protocol: TCP
+    port: 3306
+    targetPort: 3306
