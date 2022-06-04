@@ -6,8 +6,8 @@ metadata:
     component: database-config-map
     environment: development
 data:
-  DB_HOST: "mysql-database-service"
-  DB_USER: "root"
+  DB_HOST: "eultengorampupdevsqlserver01.mysql.database.azure.com"
+  DB_USER: "prueba01@eultengorampupdevsqlserver01"
   PORT: "3000"
 
   
