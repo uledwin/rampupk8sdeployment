@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  backend
-        image:  burnedduke36/ckad-back
+        image:  eultengodevacr01.azurecr.io/backend:e3005cc6cb2d7ca00da558a1f7563f41aace66a2
         # livenessProbe:
         #   httpGet:
         #     path: /health-check
