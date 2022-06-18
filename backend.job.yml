@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-job
-        image: burnedduke36/ckad-backend-job
+        image: uledwin/backend-job
         env:
         - name: DB_HOST
           valueFrom:

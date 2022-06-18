@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name:  frontend
-        image:  burnedduke36/ckad-front:latest
+        image:  uledwin/frontend
         livenessProbe:
           httpGet:
             path: /
