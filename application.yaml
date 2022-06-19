@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/uledwin/rampupk8sdeployment.git
-    targetRevision: v0.3.0
+    targetRevision: HEAD
     path: overlays/dev
   destination: 
     server: https://kubernetes.default.svc
