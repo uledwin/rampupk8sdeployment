@@ -6,7 +6,5 @@ metadata:
     component: database-config-map
     environment: development
 data:
-  MYSQL_ROOT_PASSWORD: "@Aa123456789!"
-  MYSQL_DATABASE: eultengo-dev-sqldatabase
-
-
+  MYSQL_ROOT_PASSWORD: Admin-Password
+  MYSQL_DATABASE: rampup
