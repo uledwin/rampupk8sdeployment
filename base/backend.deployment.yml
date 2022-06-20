@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  backend
-        image:  eultengodevacr01.azurecr.io/backend
+        image:  uledwin/backend
         # livenessProbe:
         #   httpGet:
         #     path: /health-check

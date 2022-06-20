@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name:  frontend
-        image:  eultengodevacr01.azurecr.io/frontend:latest
+        image:  uledwin/frontend
         livenessProbe:
           httpGet:
             path: /
