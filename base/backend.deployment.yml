@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name:  backend
-        image:  burnedduke36/ckad-back
+        image:  uledwin/backend
         # livenessProbe:
         #   httpGet:
         #     path: /health-check
