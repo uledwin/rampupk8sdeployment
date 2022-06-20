@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - uledwin/backend:1.0
