@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: backend-job
+  labels:
+    app: backend-job
+    component: seeds-db 
+spec:
+  template:
+    spec:
+      containers:
+      - name: backend
+        image: uledwin/backend-job:0.1
