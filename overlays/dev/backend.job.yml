@@ -10,4 +10,4 @@ spec:
     spec:
       containers:
       - name: backend-job
-        image: uledwin/backend-job:1.2.12
+        image: eultengodevacr01.azurecr.io/backend-job:1.2.12

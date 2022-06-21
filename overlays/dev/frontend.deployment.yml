@@ -11,4 +11,4 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: uledwin/frontend:1.2.9
+        image: eultengodevacr01.azurecr.io/frontend:1.2.9
