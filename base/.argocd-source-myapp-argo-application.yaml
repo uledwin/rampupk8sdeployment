@@ -1,6 +1,5 @@
 kustomize:
   images:
-  - name: uledwin/backend
-    newTag: 1.1
+  - uledwin/backend:1.1
   - uledwin/frontend
   - uledwin/backend-job
