@@ -1,0 +1,5 @@
+kustomize:
+  images:
+  - uledwin/backend:1.1
+  - uledwin/frontend
+  - uledwin/backend-job
