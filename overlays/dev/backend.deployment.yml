@@ -11,4 +11,4 @@ spec:
     spec:
       containers:
       - name: backend
-        image: uledwin/backend:1.2.9
+        image: uledwin/backend:1.2.10
