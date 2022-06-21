@@ -9,5 +9,5 @@ spec:
   template:
     spec:
       containers:
-      - name: backend
+      - name: backend-job
         image: uledwin/backend-job:0.1
