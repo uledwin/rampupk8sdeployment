@@ -10,4 +10,4 @@ spec:
     spec:
       containers:
       - name: backend-job
-        image: uledwin/backend-job:0.1
+        image: uledwin/backend-job:1.2.12
