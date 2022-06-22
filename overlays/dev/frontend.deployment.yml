@@ -11,4 +11,4 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: eultengodevacr01.azurecr.io/frontend:0.0.7
+        image: eultengodevacr01.azurecr.io/frontend:0.0.8
