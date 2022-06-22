@@ -11,4 +11,4 @@ spec:
     spec:
       containers:
       - name: backend
-        image: eultengodevacr01.azurecr.io/backend:1.2.16
+        image: eultengodevacr01.azurecr.io/backend:1.2.20
